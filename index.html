@@ -1,49 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HARI — Philippine Commute Companion</title>
-  <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      line-height: 1.65;
-      color: #0E3D56;
-      background: #E8F4FA;
-      margin: 0;
-      padding: 40px 16px;
-    }
-    main {
-      max-width: 680px;
-      margin: 0 auto;
-      background: #FFFFFF;
-      border-radius: 16px;
-      padding: 28px 24px;
-      box-shadow: 0 2px 12px rgba(14, 61, 86, 0.08);
-    }
-    h1 { margin-top: 0; color: #0E3D56; }
-    p { color: #334155; }
-    .links { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
-    .btn {
-      display: inline-block;
-      background: #166F8A;
-      color: #FFFFFF;
-      text-decoration: none;
-      font-weight: 600;
-      padding: 10px 16px;
-      border-radius: 10px;
-    }
-    .btn-alt { background: #B55800; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HARI — Philippine Commute Companion</title>
+<style>
+:root{--navy:#0e3d56;--teal:#166f8a;--gold:#b55800;--sky:#e8f4fa;--ink:#334155}
+*{box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.65;color:var(--navy);background:var(--sky);margin:0;padding:28px 16px}
+main{max-width:760px;margin:0 auto;background:#fff;border-radius:20px;padding:32px 26px;box-shadow:0 8px 28px rgba(14,61,86,.12)}
+h1{margin:0 0 12px;font-size:clamp(2rem,7vw,3rem);line-height:1.15}
+h2{margin:0 0 8px;color:var(--navy)}
+p{color:var(--ink);margin:0 0 14px}
+.links{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+.btn{display:inline-block;background:var(--teal);color:#fff;text-decoration:none;font-weight:700;padding:11px 16px;border-radius:10px}
+.btn-alt{background:var(--gold)}
+.support{margin-top:28px;padding:22px;border-radius:16px;background:#f5fafc;border:1px solid #d8eaf2;display:grid;grid-template-columns:minmax(0,1fr) 180px;gap:22px;align-items:center}
+.support p{margin-bottom:10px}
+.qr{width:180px;max-width:100%;border-radius:12px;background:#fff;padding:8px;box-shadow:0 4px 14px rgba(14,61,86,.12)}
+.number{font-size:1.25rem;font-weight:800;letter-spacing:.03em;color:var(--gold)}
+.small{font-size:.9rem;color:#64748b}
+@media(max-width:560px){body{padding:16px 10px}main{padding:24px 18px;border-radius:16px}.support{grid-template-columns:1fr;text-align:center}.qr{margin:0 auto}}
+</style>
 </head>
 <body>
-  <main>
-    <h1>HARI — Philippine Commute Companion</h1>
-    <p>An independent, offline-first Philippine public transport fare estimator, GPS trip meter, offline map viewer, and bilingual commute assistant by Jayriec Yet.</p>
-    <div class="links">
-      <a class="btn" href="privacy-policy.html">Privacy Policy</a>
-      <a class="btn btn-alt" href="terms.html">Terms &amp; Conditions</a>
-    </div>
-  </main>
+<main>
+<h1>HARI — Philippine Commute Companion</h1>
+<p>An independent, offline-first Philippine public transport fare estimator, GPS trip meter, offline map viewer, and bilingual commute assistant by Jayriec Yet.</p>
+<div class="links">
+<a class="btn" href="privacy-policy.html">Privacy Policy</a>
+<a class="btn btn-alt" href="terms.html">Terms &amp; Conditions</a>
+</div>
+<section class="support" aria-labelledby="support-title">
+<div>
+<h2 id="support-title">Support HARI</h2>
+<p>If HARI helps your commute, you can support independent development. Support is optional and does not unlock features.</p>
+<p><strong>GCash:</strong><br><span class="number">09318413849</span></p>
+<p class="small">Questions or feedback: <a href="mailto:bitdevwork@gmail.com">bitdevwork@gmail.com</a></p>
+</div>
+<div>
+<img class="qr" src="support-qr.jpg" alt="Support QR code">
+<p class="small">Scan to support</p>
+<a class="small" href="support-qr.jpg" download>Download QR code</a>
+</div>
+</section>
+</main>
 </body>
 </html>
