@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HARI — Privacy Policy</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.65;
+      color: #0E3D56;
+      background: #E8F4FA;
+      margin: 0;
+      padding: 24px 16px;
+    }
+    main {
+      max-width: 780px;
+      margin: 0 auto;
+      background: #FFFFFF;
+      border-radius: 16px;
+      padding: 28px 24px;
+      box-shadow: 0 2px 12px rgba(14, 61, 86, 0.08);
+    }
+    h1 { margin-top: 0; font-size: 1.75rem; color: #0E3D56; }
+    h2 { font-size: 1.15rem; color: #166F8A; margin-top: 1.5rem; }
+    p, li { color: #334155; font-size: 0.96rem; }
+    .meta { font-size: 0.9rem; color: #526777; margin-bottom: 1.25rem; }
+    .badge {
+      display: inline-block;
+      background: #E0F2F5;
+      color: #166F8A;
+      font-weight: 600;
+      font-size: 0.82rem;
+      padding: 4px 10px;
+      border-radius: 8px;
+      margin-bottom: 12px;
+    }
+    a { color: #166F8A; }
+  </style>
+</head>
+<body>
+  <main>
+    <span class="badge">Offline-First • Android Ad Privacy Controls</span>
+    <h1>HARI Privacy Policy</h1>
+    <p class="meta"><strong>Effective Date:</strong> November 25, 2026 &nbsp;|&nbsp; <strong>App Version:</strong> 1.0.0</p>
+
+    <p>HARI is an independent, offline-first Philippine commute assistant. Your profile, trip history, GPS rides, custom fare presets, and chat history are stored locally on your device. No user accounts or remote tracking servers are used. Optional web search and tariff checks are OFF by default and only run if you turn them on.</p>
+
+    <h2>1. Information Stored on Your Device</h2>
+    <ul>
+      <li><strong>Optional Profile Name:</strong> Your chosen display name (you may also continue as a guest).</li>
+      <li><strong>Default Commute Area:</strong> Region, province, city/municipality, and optional barangay you select.</li>
+      <li><strong>Discount Eligibility Preference:</strong> Whether you toggle the 20% Student, Senior Citizen, or PWD discount calculation.</li>
+      <li><strong>Trip History:</strong> Up to 150 saved rides, including route names, distances, fares, timestamps, up to 120 sampled GPS route points per trip, and any optional vehicle plate/body number you enter.</li>
+      <li><strong>Local Chat &amp; AI Memory:</strong> Up to 30 chat sessions (up to 100 messages each) and optional saved commute notes (such as Home/Work locations or preferred vehicles). HARI blocks saving passwords, PINs, and payment card numbers in AI memory.</li>
+    </ul>
+
+    <h2>2. Local Storage &amp; Security</h2>
+    <ul>
+      <li><strong>Android (Android 10+ / API 29+):</strong> Local preferences, trip histories, chat records, and AI memory are encrypted at rest using Android Keystore AES-256-GCM encryption and excluded from Android Auto Backup and device-to-device transfers.</li>
+      <li><strong>iOS:</strong> Local preferences, trip histories, chat records, and AI memory are stored in iOS UserDefaults (protected by iOS system Data Protection when your device is locked), and offline map files are excluded from iCloud Backup.</li>
+      <li><strong>Network Transport:</strong> Optional online requests use HTTPS encryption in transit.</li>
+    </ul>
+
+    <h2>3. GPS Location &amp; Device Permissions</h2>
+    <ul>
+      <li><strong>Location (Precise / Approximate):</strong> Used strictly on-device to center the map, estimate distances, and record active rides you start. HARI does not upload your GPS coordinates to any server.</li>
+      <li><strong>Active Ride Background Tracking:</strong> While you have an active ride running, Android uses a Location Foreground Service with an ongoing notification, and iOS uses background location updates with the system location indicator so distance metering continues if your screen locks. Tracking stops when you end the trip.</li>
+      <li><strong>Notifications (Android 13+):</strong> Requested only to display the ongoing fare meter notification during an active trip. HARI does not send promotional push notifications.</li>
+      <li><strong>Phone Dialer, Email &amp; Share:</strong> Opening emergency hotlines, tapping <em>Feedback</em> to message the developer via your email app, or sharing a trip summary uses your device's standard dialer, email app, or share sheet only when you tap those actions. HARI never reads your contacts or emails.</li>
+    </ul>
+
+    <h2>4. Local AI Companion &amp; Optional Online Requests</h2>
+    <p>HARI's chat companion runs locally on your device using rule-based logic and bundled Philippine Standard Geographic Code (PSGC) data.</p>
+    <ul>
+      <li><strong>Optional Online Search (OFF by default):</strong> If you manually enable the "Search" chip in the Chat screen or tap Refresh Online in Tariff Management, your tariff query text is sent over HTTPS to DuckDuckGo (<code>html/lite/api.duckduckgo.com</code>) or Wikipedia (<code>en.wikipedia.org</code>) to retrieve public tariff information. Please avoid entering sensitive personal details when online search is turned on.</li>
+      <li><strong>Optional Tariff Source Checks (OFF by default):</strong> If you enable automatic source checks or tap "Check Sources Now" in Settings → Offline Map &amp; Routing Packs → Tariff Updates (with online search enabled), HARI fetches public Philippine government and LGU web pages (such as <code>ltfrb.gov.ph</code>, <code>dotr.gov.ph</code>, <code>officialgazette.gov.ph</code>, <code>marina.gov.ph</code>, and city portals). No personal profile or GPS data is attached to these requests.</li>
+      <li><strong>Offline Map Delivery (Android):</strong> On Google Play installations, offline map and routing packs are delivered via Google Play Asset Delivery.</li>
+    </ul>
+
+    <h2>5. Third-Party SDKs, Ads &amp; Analytics</h2>
+    <p>Android builds include Google's Mobile Ads SDK and User Messaging Platform (UMP). When advertising is enabled, Google may process IP addresses (which can imply approximate location), advertising/device identifiers, ad interactions and diagnostics for ad delivery, measurement and fraud prevention, subject to applicable privacy choices. HARI disables the SDK's automatic GPS/coarse-location collection. HARI does not attach profile details, GPS coordinates, trip endpoints/history, saved locations, AI conversations or payment information to advertising or analytics requests.</p>
+    <p>Consent information is checked before requesting ads. Where required, review your choices in <strong>Settings → Ad privacy options</strong>. Ad availability follows UMP's permitted-request state and applicable restrictions; a permitted ad request does not mean you agreed to personalized ads. Production advertising stays disabled until the developer completes the release configuration. Core functions remain usable offline; there are no ads in active trips or chat. iOS contains no advertising SDK.</p>
+    <p>Aggregate ad counters are stored locally for diagnostics. No separate behavioral analytics or crash-reporting service is added; Google's ad SDK performs its own measurement. Read <a href="https://policies.google.com/privacy">Google's Privacy Policy</a> and <a href="https://policies.google.com/technologies/partner-sites">How Google uses information from partners</a>. We do not sell, rent or trade your personal trip data. Offline maps and road routing use OpenStreetMap data (&copy; OpenStreetMap contributors, ODbL 1.0) rendered locally via MapLibre and GraphHopper, with Google Noto Sans map glyphs (OFL-1.1).</p>
+
+    <h2>6. Data Retention &amp; Deletion</h2>
+    <p>Your data stays on your device only for as long as you keep it. You can delete data at any time inside the app:</p>
+    <ul>
+      <li><strong>Clear trip history:</strong> Settings → App Memory &amp; Storage → Clear Trips.</li>
+      <li><strong>Clear chats &amp; AI memory:</strong> Settings → App Memory &amp; Storage → Clear Chats &amp; AI Memory.</li>
+      <li><strong>Delete all personal data:</strong> Settings → App Memory &amp; Storage → Delete All Data.</li>
+      <li>Uninstalling HARI also permanently removes all locally stored app data from your device.</li>
+    </ul>
+
+    <h2>7. Your Privacy Rights (Philippine Data Privacy Act of 2012 — RA 10173)</h2>
+    <p>Under Republic Act No. 10173 and applicable laws, you have the right to be informed, to access, to rectify/correct, to object to or withdraw consent (including disabling location permissions or optional online search at any time), to erasure or blocking of personal data, to data portability, to damages, and to file a complaint with the National Privacy Commission (NPC) of the Philippines.</p>
+
+    <h2>8. Children's Privacy</h2>
+    <p>HARI is a general-audience commute utility. Because HARI does not operate user accounts or collect personal information on remote servers, we do not knowingly collect personal data from children under 13 (or the applicable age of digital consent in your jurisdiction) on our servers. Parents or guardians may erase any locally saved data on the device via Settings → Delete All Data.</p>
+
+    <h2>9. Independent App Disclaimer</h2>
+    <p>HARI is an independent application and is not affiliated with, endorsed by, or an official application of the LTFRB, DOTr, PSA, or any Philippine government agency.</p>
+
+    <h2>10. Contact &amp; Policy Updates</h2>
+    <p>
+      <strong>Developer / Personal Information Controller:</strong> Jayriec Yet<br />
+      <strong>Address:</strong> Daet, Camarines Norte, Philippines<br />
+      <strong>General Support Email:</strong> <a href="mailto:bitdevwork@gmail.com">bitdevwork@gmail.com</a><br />
+      <strong>Privacy / Data Protection Officer (DPO) Email:</strong> <a href="mailto:Jayriecyet7@gmail.com">Jayriecyet7@gmail.com</a><br />
+      <strong>Developer Website:</strong> <a href="https://github.com/Jay-lab27">https://github.com/Jay-lab27</a>
+    </p>
+    <p>We may update this Privacy Policy when app features or legal requirements change. Material updates will be reflected on this page, in the app's Privacy Policy screen, and in our store listings.</p>
+    <p class="meta"><a href="terms.html">Terms &amp; Conditions</a></p>
+  </main>
+</body>
+</html>
