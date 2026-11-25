@@ -1,49 +1,102 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>HARI — Philippine Commute Companion</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#e8f4fa">
+<meta name="description" content="Meet HARI, your Philippine commute companion. Estimate fares, record GPS trips, use offline maps, and keep your commute history on your phone.">
+<meta property="og:title" content="HARI — Your Philippine commute companion">
+<meta property="og:description" content="Plan your fare. Track your ride. Bring the map offline.">
+<meta property="og:image" content="https://jay-lab27.github.io/happyimage.png">
+<meta property="og:url" content="https://jay-lab27.github.io/">
+<link rel="canonical" href="https://jay-lab27.github.io/">
+<link rel="icon" type="image/png" href="happyimage.png">
+<title>HARI — Your Philippine Commute Companion</title>
 <style>
-:root{--navy:#0e3d56;--teal:#166f8a;--gold:#b55800;--sky:#e8f4fa;--ink:#334155}
-*{box-sizing:border-box}
-body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.65;color:var(--navy);background:var(--sky);margin:0;padding:28px 16px}
-main{max-width:760px;margin:0 auto;background:#fff;border-radius:20px;padding:32px 26px;box-shadow:0 8px 28px rgba(14,61,86,.12)}
-h1{margin:0 0 12px;font-size:clamp(2rem,7vw,3rem);line-height:1.15}
-h2{margin:0 0 8px;color:var(--navy)}
-p{color:var(--ink);margin:0 0 14px}
-.links{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
-.btn{display:inline-block;background:var(--teal);color:#fff;text-decoration:none;font-weight:700;padding:11px 16px;border-radius:10px}
-.btn-alt{background:var(--gold)}
-.support{margin-top:28px;padding:22px;border-radius:16px;background:#f5fafc;border:1px solid #d8eaf2;display:grid;grid-template-columns:minmax(0,1fr) 180px;gap:22px;align-items:center}
-.support p{margin-bottom:10px}
-.qr{width:180px;max-width:100%;border-radius:12px;background:#fff;padding:8px;box-shadow:0 4px 14px rgba(14,61,86,.12)}
-.number{font-size:1.25rem;font-weight:800;letter-spacing:.03em;color:var(--gold)}
-.small{font-size:.9rem;color:#64748b}
-@media(max-width:560px){body{padding:16px 10px}main{padding:24px 18px;border-radius:16px}.support{grid-template-columns:1fr;text-align:center}.qr{margin:0 auto}}
+:root{--ink:#0e3d56;--teal:#166f8a;--orange:#b55800;--muted:#526777;--sky:#e8f4fa;--line:#d4e6ed;--white:#fff}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:95px}
+body{margin:0;background:#f5fafc;color:var(--ink);font:16px/1.65 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+a{color:var(--teal);text-underline-offset:4px}button{font:inherit}a,button{-webkit-tap-highlight-color:transparent}button,a,summary{touch-action:manipulation}
+:focus-visible{outline:3px solid var(--orange);outline-offset:5px;border-radius:6px}.skip{position:absolute;left:12px;top:-80px;background:white;padding:12px;z-index:4}.skip:focus{top:8px}
+.wrap{width:min(1100px,calc(100% - 48px));margin-inline:auto}
+header{background:rgba(245,250,252,.97);border-bottom:1px solid var(--line)}
+.nav{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;font-size:24px;font-weight:850;letter-spacing:.05em}.brand img{width:42px;height:45px;object-fit:contain}
+nav{display:flex;gap:24px;align-items:center}nav a{font-size:14px;text-decoration:none;color:var(--muted);font-weight:650}nav a:hover{color:var(--teal)}
+.hero{background:var(--sky);border-bottom:1px solid var(--line);overflow:hidden}.hero-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:50px;align-items:center;padding-block:70px 58px}
+.eyebrow{margin:0 0 16px;font-size:13px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:var(--teal)}
+h1{font-size:clamp(38px,5.5vw,68px);line-height:1.08;letter-spacing:-.045em;margin:0 0 24px;font-weight:820}h1 span{color:var(--teal)}.lead{font-size:18px;line-height:1.65;max-width:510px;color:#3f5c6e;margin:0 0 25px}
+.actions{display:flex;gap:12px;flex-wrap:wrap}.button{min-height:48px;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 19px;border-radius:14px;text-decoration:none;font-weight:750;border:1px solid transparent;cursor:pointer;font-size:15px}
+.primary{background:var(--orange);color:white;box-shadow:0 4px 0 #8d4500}.secondary{background:white;border-color:var(--line);color:var(--teal)}.button:hover{filter:brightness(.96)}.release{font-size:14px;color:var(--muted);margin:20px 0 0}.release strong{color:var(--ink)}
+.hero-art{position:relative;display:flex;justify-content:center;align-items:center;min-height:385px}
+.orbit{position:absolute;width:330px;height:330px;border-radius:50%;background:#d2e9f0;box-shadow:0 0 0 24px #e0f0f5,0 0 0 25px rgba(22,111,138,.08)}
+.mascot{width:290px;height:320px;object-fit:contain;z-index:1;filter:drop-shadow(0 12px 10px rgba(14,61,86,.1));animation:hello 5s ease-in-out infinite}
+.hero-note{position:absolute;bottom:0;background:white;border:1px solid var(--line);border-radius:18px;padding:12px 22px;z-index:2;text-align:center;box-shadow:0 8px 24px rgba(14,61,86,.06);font-size:14px;font-weight:700}
+.hero-note small{display:block;font-size:13px;font-weight:450;color:var(--muted)}
+.promises{display:flex;gap:32px;border-top:1px solid #cce1e9;padding-block:20px;font-size:14px;color:var(--muted);flex-wrap:wrap}.promises strong{color:var(--ink)}
+section.content{padding-block:70px}.section-head{max-width:660px;margin-bottom:28px}h2{margin:0 0 14px;font-size:clamp(28px,3.4vw,40px);line-height:1.2;letter-spacing:-.03em}p{margin:0 0 16px}.section-head p{color:var(--muted)}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.feature{border:1px solid var(--line);border-radius:22px;background:white;padding:26px}.feature h3{font-size:19px;line-height:1.3;margin:17px 0 10px}.feature p{color:var(--muted);font-size:15px;margin:0}.icon{width:46px;height:46px;display:grid;place-items:center;border-radius:14px;background:#e8f4fa;color:var(--teal)}svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.guide{background:white;border-block:1px solid var(--line)}.guide-layout{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px}.guide-intro{position:relative}.callout{background:var(--sky);border:1px solid var(--line);border-radius:18px;padding:20px;margin-top:25px;font-size:14px;color:var(--muted)}.callout strong{color:var(--ink)}
+.steps{list-style:none;margin:0;padding:0;counter-reset:guide}.steps li{counter-increment:guide;display:grid;grid-template-columns:36px 1fr;gap:14px;padding:0 0 25px}.steps li::before{content:counter(guide);display:grid;place-items:center;width:34px;height:34px;background:var(--sky);color:var(--teal);border-radius:11px;font-weight:800}.steps h3{margin:1px 0 5px;font-size:18px}.steps p{margin:0;color:var(--muted);font-size:15px}
+.presets{background:var(--ink);color:white;border-radius:24px;padding:32px;margin-top:22px;display:grid;grid-template-columns:.7fr 1.3fr;gap:40px}.presets h3{margin:0;font-size:23px}.presets p{color:#d3e7ef;font-size:15px;margin:0}.presets strong{color:white}
+.faq-grid{display:grid;grid-template-columns:.7fr 1.3fr;gap:70px}.faq details{border-bottom:1px solid var(--line);padding:19px 0}.faq details:first-child{padding-top:0}summary{cursor:pointer;font-weight:700;padding-right:10px;min-height:30px}.faq details p{color:var(--muted);font-size:15px;margin:13px 0 0}.faq details[open] summary{color:var(--teal)}
+.support-panel{display:grid;grid-template-columns:1fr 1fr;gap:32px;padding:36px;border:1px solid var(--line);border-radius:26px;background:white}.support-panel h2{font-size:32px}.support-panel p{color:var(--muted);font-size:15px}.payment{padding:24px;background:var(--sky);border-radius:20px}.payment-label{font-size:14px;color:var(--muted);font-weight:650;margin:0}.number{font-size:clamp(23px,4vw,29px);letter-spacing:.04em;font-weight:800;color:var(--ink);display:block;margin:4px 0 16px}.copy{padding:9px 15px;min-height:44px;background:white;border:1px solid #b7d3df;border-radius:12px;color:var(--teal);font-weight:750;cursor:pointer}.copy-state{display:block;font-size:14px;min-height:26px;color:var(--teal);margin-top:5px}.qr-details{margin-top:18px;border-top:1px solid #c6dfe9;padding-top:15px}.qr{display:block;width:min(100%,310px);height:auto;margin:18px auto 12px;border-radius:14px;background:white}.qr-link{display:block;text-align:center;font-weight:700;font-size:14px}.small{font-size:14px!important}.contact{display:block;font-weight:750;font-size:16px;overflow-wrap:anywhere;margin:5px 0 18px}
+footer{border-top:1px solid var(--line);padding-block:28px 34px;background:#edf6fa}.footer-row{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}.footer-row p{margin:0;color:var(--muted);font-size:14px}.footer-links{display:flex;gap:18px;flex-wrap:wrap;font-size:14px;font-weight:650}.legal-note{font-size:13px;color:var(--muted);max-width:800px;margin:20px 0 0}
+@keyframes hello{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+@media(max-width:760px){.wrap{width:calc(100% - 36px)}.nav{min-height:72px;gap:12px}nav{gap:14px}nav a{font-size:13px}nav .desktop-link{display:none}.hero-grid{grid-template-columns:1fr;gap:26px;padding-block:40px 24px}.lead{font-size:17px}.hero-art{min-height:290px;order:2}.orbit{width:232px;height:232px}.mascot{width:220px;height:250px}.hero-note{font-size:13px;padding:10px 18px}.promises{gap:10px;justify-content:space-between;font-size:12px}.promises span{max-width:31%}.promises strong{display:block}section.content{padding-block:44px}.features{grid-template-columns:1fr 1fr;gap:12px}.feature{padding:18px;border-radius:18px}.feature h3{font-size:17px;margin-top:14px}.feature p{font-size:14px}.guide-layout,.faq-grid{grid-template-columns:1fr;gap:25px}.callout{margin-top:18px}.presets{grid-template-columns:1fr;gap:14px;padding:24px;margin-top:8px}.support-panel{grid-template-columns:1fr;gap:18px;padding:22px}.payment{padding:20px}.section-head{margin-bottom:22px}.footer-links{gap:15px}}
+@media(max-width:360px){.features{grid-template-columns:1fr}.actions .button{width:100%}nav a{font-size:12px}.brand{font-size:22px}.brand img{width:32px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.mascot{animation:none}}
 </style>
 </head>
 <body>
-<main>
-<h1>HARI — Philippine Commute Companion</h1>
-<p>An independent, offline-first Philippine public transport fare estimator, GPS trip meter, offline map viewer, and bilingual commute assistant by Jayriec Yet.</p>
-<div class="links">
-<a class="btn" href="privacy-policy.html">Privacy Policy</a>
-<a class="btn btn-alt" href="terms.html">Terms &amp; Conditions</a>
-</div>
-<section class="support" aria-labelledby="support-title">
-<div>
-<h2 id="support-title">Support HARI</h2>
-<p>If HARI helps your commute, you can support independent development. Support is optional and does not unlock features.</p>
-<p><strong>GCash:</strong><br><span class="number">09318413849</span></p>
-<p class="small">Questions or feedback: <a href="mailto:bitdevwork@gmail.com">bitdevwork@gmail.com</a></p>
-</div>
-<div>
-<img class="qr" src="4c1cd54d-8254-4ba7-a9cb-ca979506fb47 (1).jpg" alt="Support QR code">
-<p class="small">Scan to support</p>
-<a class="small" href="4c1cd54d-8254-4ba7-a9cb-ca979506fb47 (1).jpg" download>Download QR code</a>
-</div>
+<a class="skip" href="#main">Skip to content</a>
+<header><div class="wrap nav"><a class="brand" href="#main"><img src="happyimage.png" alt="" width="42" height="45">HARI</a><nav aria-label="Main navigation"><a href="#features" class="desktop-link">Features</a><a href="#guide">How to use</a><a href="#support">Support</a><a href="privacy-policy.html" class="desktop-link">Privacy</a></nav></div></header>
+<main id="main">
+<section class="hero" aria-labelledby="hero-title">
+<div class="wrap hero-grid"><div>
+<p class="eyebrow">Your Philippine commute companion</p>
+<h1 id="hero-title">A little help.<br>A better <span>biyahe.</span></h1>
+<p class="lead">Check an estimated fare, record your ride, and bring a detailed map along. HARI keeps your daily commute in one familiar place.</p>
+<div class="actions"><a class="button primary" href="#guide">Get to know HARI</a><a class="button secondary" href="mailto:bitdevwork@gmail.com">Contact the developer</a></div>
+<p class="release"><strong>Android release in preparation.</strong><br>The Google Play download link will appear here when the public release is available.</p>
+</div><div class="hero-art"><div class="orbit" aria-hidden="true"></div><img class="mascot" src="happyimage.png" alt="HARI’s cheerful orange-and-teal mascot" width="290" height="320"><div class="hero-note">Sakay · Sundan · Alamin<small>Made for everyday Philippine commutes</small></div></div></div>
+<div class="wrap promises"><span><strong>Offline maps</strong>after setup</span><span><strong>No account</strong>needed to start</span><span><strong>English &amp; Filipino</strong>commute help</span></div>
 </section>
+<section id="features" class="content wrap" aria-labelledby="features-title">
+<div class="section-head"><p class="eyebrow">Know your way around</p><h2 id="features-title">Small tools for the whole journey.</h2><p>From a quick fare check to a saved trip summary, HARI helps you make sense of your commute.</p></div>
+<div class="features">
+<article class="feature"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 7h10l8 8-8 7L3 12z"/><circle cx="8" cy="10" r="1"/></svg></span><h3>Estimate your fare</h3><p>Choose your origin, destination, vehicle and tariff preset. Apply supported passenger discounts and review the estimate.</p></article>
+<article class="feature"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m8 4 12 8-12 8z"/></svg></span><h3>Record your ride</h3><p>Start GPS metering for distance, time and a running fare estimate. Finish the ride to keep its summary.</p></article>
+<article class="feature"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m3 5 6-2 6 2 6-2v16l-6 2-6-2-6 2zM9 3v16M15 5v16"/></svg></span><h3>Take the map offline</h3><p>Browse the Philippines and use supported road routing after the detailed map and routing packs are ready.</p></article>
+<article class="feature"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4"/><path d="M8 12h8M12 8v8"/></svg></span><h3>Keep your presets</h3><p>Create a named fare preset for the vehicle and rates you use. Review or edit it whenever your local rates change.</p></article>
+<article class="feature"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><h3>Revisit your trips</h3><p>View saved routes, distances and fare summaries. Your Home screen shows today’s total and your recorded activity.</p></article>
+<article class="feature"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 4h16v13H9l-5 4zM8 9h8M8 13h5"/></svg></span><h3>Ask HARI for help</h3><p>Get English or Filipino guidance on fares, places, presets and app controls, with optional online source searches.</p></article>
+</div></section>
+<section id="guide" class="content guide" aria-labelledby="guide-title"><div class="wrap">
+<div class="guide-layout"><div class="guide-intro"><p class="eyebrow">Your first biyahe</p><h2 id="guide-title">Wake HARI.<br>Make yourself at home.</h2><p>First-time setup introduces your commute area and fare preferences. Then a short tour highlights the real controls in the app.</p><aside class="callout"><strong>Give your map some room.</strong><br>The detailed map and routing data make HARI a large download—about 1 GB. Use Wi-Fi for installation and keep extra free space for the extracted offline map. Setup must finish before the main app opens.</aside></div>
+<ol class="steps"><li><div><h3>A sleepy hello</h3><p>Tap to wake HARI. When HARI falls asleep again, tap a second time to continue the wake-up, stretch and peek sequence.</p></div></li><li><div><h3>Set up your commute</h3><p>Enter an optional display name, select your area and review a fare preset. GPS permission enables ride recording; manual fare estimates can be used without it.</p></div></li><li><div><h3>Let the offline map finish</h3><p>Keep the app open while it prepares the detailed map. If setup needs attention, check storage and connectivity, then use Retry.</p></div></li><li><div><h3>Follow the on-screen tour</h3><p>Tap to continue through Start Trip, Quick Fare, the + preset button, History, Chat and Settings. Replay it from Settings → Show me around.</p></div></li><li><div><h3>Plan or ride</h3><p>Use Quick Fare before you travel. Use Start Trip while riding, then finish the trip to save its summary.</p></div></li></ol></div>
+<div class="presets"><h3>How do I add a preset?</h3><p>Tap the <strong>+</strong> button in the bottom bar. Add a recognisable name, choose the vehicle and fare method, and enter the applicable rates. Review and save. Open <strong>Settings → Manage Presets</strong> to edit or select a preset later.</p></div>
+</div></section>
+<section id="faq" class="content wrap faq-grid" aria-labelledby="faq-title"><div><p class="eyebrow">Before you head out</p><h2 id="faq-title">A few useful answers.</h2><p>More help is available through HARI’s chat and the replayable in-app tour.</p></div><div class="faq">
+<details><summary>Does HARI work without internet?</summary><p>After setup, core fare tools, saved presets, trip history, GPS metering and the installed map work offline. Supported road routing needs its routing data. Online source checks, web searches and ads need a connection.</p></details>
+<details><summary>Are the displayed fares official or guaranteed?</summary><p>They are estimates based on configured presets or available source evidence. Check the selected formula, date and source status. Confirm the fare with the operator or posted fare matrix before riding. HARI is independent of transport operators and government agencies.</p></details>
+<details><summary>Why does HARI ask me to confirm a location?</summary><p>Several places share a name. Check the barangay, city or municipality and province before choosing. A more specific location helps avoid a route to the wrong place.</p></details>
+<details><summary>What if HARI does not know the answer?</summary><p>HARI should say when it cannot answer reliably or needs more details. Add a clearer route, vehicle or province, check source evidence, or use the app’s fare tools directly.</p></details>
+<details><summary>Where are my trips and chats stored?</summary><p>Your profile, trips, presets and chat records are stored on your device. HARI does not require an account. Optional online searches and Android advertising involve third-party services; see the <a href="privacy-policy.html">Privacy Policy</a> for details and privacy choices.</p></details>
+<details><summary>How do I delete my saved information?</summary><p>Open Settings → App Memory &amp; Storage. Choose Clear Trips, Clear Chats &amp; AI Memory, or Delete All Data. Review the confirmation carefully. Local records cannot be restored after deletion unless you have kept a separate copy.</p></details>
+<details><summary>How do ads work?</summary><p>Android builds include Google advertising with applicable consent and privacy controls. Ads are excluded from active rides, chat and the setup tour. Where available, open Settings → Ad privacy options to review your choices.</p></details>
+<details><summary>Where can I download HARI?</summary><p>The Android release is being prepared for Google Play. There is no public download button on this page yet. For release or testing questions, email <a href="mailto:bitdevwork@gmail.com">bitdevwork@gmail.com</a>.</p></details>
+</div></section>
+<section id="support" class="content wrap" aria-labelledby="support-title"><div class="support-panel"><div><p class="eyebrow">Made independently, with care</p><h2 id="support-title">Help HARI keep moving.</h2><p>HARI is built by Jayriec Yet in Daet, Camarines Norte. Share a suggestion, report a problem, or support continued development if the app helps your commute.</p><p>Questions, feedback &amp; privacy requests</p><a class="contact" href="mailto:bitdevwork@gmail.com">bitdevwork@gmail.com</a><p class="small">For a bug report, include your phone model, Android version and the steps that caused the problem. Avoid sending private trip details unless they are needed.</p><p class="small">Creator support is voluntary and does not unlock app features. Transfers are handled by your payment provider.</p></div>
+<div class="payment"><p class="payment-label">Support via GCash</p><span class="number" id="gcash-number">09318413849</span><button type="button" class="copy" id="copy-number">Copy number</button><span class="copy-state" id="copy-status" role="status" aria-live="polite"></span><details class="qr-details"><summary>View &amp; download the support QR</summary><img class="qr" src="4c1cd54d-8254-4ba7-a9cb-ca979506fb47%20(1).jpg" alt="Creator-provided InstaPay support QR code" width="1041" height="1368" loading="lazy"><a class="qr-link" href="4c1cd54d-8254-4ba7-a9cb-ca979506fb47%20(1).jpg" download="HARI-support-QR.jpg">Download QR image</a><p class="small" style="margin:14px 0 0">Use a compatible wallet or banking app. Confirm the recipient and amount before sending. Provider transfer fees may apply.</p></details></div>
+</div></section>
 </main>
-</body>
-</html>
+<footer><div class="wrap"><div class="footer-row"><p><strong>HARI</strong> · Philippine Commute Companion<br>© 2026 Jayriec Yet. Original HARI mascot and branding.</p><div class="footer-links"><a href="privacy-policy.html">Privacy Policy</a><a href="terms.html">Terms &amp; Conditions</a><a href="mailto:bitdevwork@gmail.com">Contact</a></div></div><p class="legal-note">HARI is an independent app, with no affiliation to LTFRB, DOTr, PSA, or any government agency. Map data © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>. Fare estimates and route information depend on your selected data and settings.</p></div></footer>
+<script>
+document.getElementById('copy-number').addEventListener('click',async function(){
+const status=document.getElementById('copy-status');
+try{await navigator.clipboard.writeText('09318413849');status.textContent='Number copied.';}
+catch(error){status.textContent='Select 09318413849 above to copy it.';}
+});
+</script>
+</body></html>
+
