@@ -1,0 +1,6 @@
+{
+  "keyId": "hari-tariffs-2026-01",
+  "algorithm": "RSA-SHA256",
+  "payload": "{\"entries\":[],\"expiresAt\":1796435800553,\"generatedAt\":1795831000553,\"schemaVersion\":1,\"sequence\":1}",
+  "signature": "Sewdo9ISQpJjfcV1arkGpFhDEa6Hukeu0icOVXVP+sfvIvSKj6hwnIY/JTSVx0YQIpJ/VKd+rKlu2mzUb7JfagdVYcrJ+pEh0IhZCuCX2qCWNnmXeUs/lBDnKwWABHsJiawMaUrZpWb1AMkNkM8QBlFgkiX7khlVBMN7dNdu0Iw770XiFzDbSoQuw7p9D9HYlVIJ2uU6CHwFARDtMKLEdiI8RrUCg8SZ71NnkVDYnFxMW2MNKJJEYq+LZw/3iVKv7YSjqp/DEsY6ymCbrwJ5cW95NDtAgrnx0BMQiFk7Cb4IrVPYdFpglSWbuWPTqAXHRXtVc8CrwyODHmrc2mY30Rirtf3X1gKRo50c71yxTfsB5ZaWYTIwikyvJfy0O+tmrwKJspbidXmUAWGX2YNrMMcsVh36qaSoiq0WREsKsrirXI3u84OstOs5CzefuoK8/swSoZ3mutiPO7zj7TM1kclwCxTlB5IHNGrgPPmirgBGEKlc/9ORa7nGWGE0ipqs"
+}
